@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         </h1>
         <p className="mt-6 text-xl text-gray-100 max-w-3xl">
           Anything plastic can be repaired. We fix car bumpers, agricultural tanks, calf feeders, motorbikes, household items, and more. 
-          Bring your broken plastics to us, or we can come to your farm for on-site repairs. <strong className="text-white">Call Garry now on {COMPANY_INFO.phone}.</strong>
+          Bring your broken plastics to us, or we can come to your farm for on-site repairs. <strong className="text-white">Call Gary now on {COMPANY_INFO.phone}.</strong>
         </p>
         
         <div className="mt-8 flex items-center text-blue-200 gap-2">
