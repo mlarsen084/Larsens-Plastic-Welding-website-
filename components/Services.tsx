@@ -9,10 +9,10 @@ const Services: React.FC = () => {
         <div className="text-center">
           <h2 className="text-base text-larsens-blue font-semibold tracking-wide uppercase">Services</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Repair, Don't Replace
+            Southland Plastic Welding Services
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-            We specialize in restoring plastic items to their original strength. From small household fixes to large industrial on-site jobs.
+            We specialize in professional plastic repairs to save you money. Our welds restore the integrity of your equipment using advanced polyethylene welding techniques.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ const Services: React.FC = () => {
                 {index === 0 && (
                   <div className="absolute top-4 right-4">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white text-larsens-blue">
-                      Popular
+                      Top Rated
                     </span>
                   </div>
                 )}
@@ -51,28 +51,28 @@ const Services: React.FC = () => {
 
         {/* Benefits Section */}
         <div className="mt-20 border-t border-gray-200 pt-16">
-            <h3 className="text-2xl font-bold text-center mb-10 text-gray-900">Why Choose Plastic Welding?</h3>
+            <h3 className="text-2xl font-bold text-center mb-10 text-gray-900">Why Use Professional Plastic Welding?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div className="flex flex-col items-center">
                     <div className="bg-green-100 p-3 rounded-full mb-4">
                         <CheckCircle className="text-green-600 w-6 h-6" />
                     </div>
-                    <h4 className="font-bold text-lg">Cost Effective</h4>
-                    <p className="text-gray-500 mt-2">Repairs are often a fraction of the cost of buying new replacements.</p>
+                    <h4 className="font-bold text-lg">Massive Cost Savings</h4>
+                    <p className="text-gray-500 mt-2">Professional repairs cost significantly less than expensive replacement parts.</p>
                 </div>
                 <div className="flex flex-col items-center">
                      <div className="bg-green-100 p-3 rounded-full mb-4">
                         <CheckCircle className="text-green-600 w-6 h-6" />
                     </div>
-                    <h4 className="font-bold text-lg">Eco-Friendly</h4>
-                    <p className="text-gray-500 mt-2">Reduce landfill waste by extending the life of your existing plastic equipment.</p>
+                    <h4 className="font-bold text-lg">Environmental Impact</h4>
+                    <p className="text-gray-500 mt-2">Help the planet by repairing and reusing instead of contributing to landfill waste.</p>
                 </div>
                 <div className="flex flex-col items-center">
                      <div className="bg-green-100 p-3 rounded-full mb-4">
                         <CheckCircle className="text-green-600 w-6 h-6" />
                     </div>
-                    <h4 className="font-bold text-lg">Durable</h4>
-                    <p className="text-gray-500 mt-2">Our professional welds restore structural integrity, often making the bond stronger than before.</p>
+                    <h4 className="font-bold text-lg">Structural Strength</h4>
+                    <p className="text-gray-500 mt-2">Gary's welding techniques fuse the plastic back together, creating a permanent, watertight bond.</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Facebook } from 'lucide-react';
 import { COMPANY_INFO, LOGO_URL } from '../constants';
 
 const Header: React.FC = () => {
@@ -19,40 +19,34 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-2">
               <a href="#" className="flex items-center gap-3 group">
-                {/* Logo Image */}
                 <img 
                   src={LOGO_URL} 
-                  alt="Larsen's Plastic Welding" 
+                  alt="Larsen's Plastic Welding - Invercargill & Southland" 
                   className="h-16 w-auto object-contain"
-                  onError={(e) => {
-                    // Fallback if the Google Drive link fails to load in an img tag
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                  }}
                 />
-                {/* Fallback Text Logo */}
-                <div className="hidden flex flex-col items-start">
-                    <span className="text-2xl font-black italic tracking-tighter text-white transform -skew-x-12">
-                    Larsens
-                    </span>
-                    <span className="text-lg font-bold text-blue-200 uppercase tracking-widest leading-none -mt-1">
-                    Plastic Welding
-                    </span>
-                </div>
               </a>
             </div>
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-white hover:text-blue-200 px-2 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {link.name}
               </a>
             ))}
+            <a 
+              href={COMPANY_INFO.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-200 transition-colors"
+              aria-label="Visit our Facebook page"
+            >
+              <Facebook size={24} fill="currentColor" />
+            </a>
             <a 
               href={`tel:${COMPANY_INFO.phone.replace(/\s/g, '')}`}
               className="bg-white text-larsens-blue px-4 py-2 rounded-full flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-lg font-bold"
@@ -87,6 +81,16 @@ const Header: React.FC = () => {
                 {link.name}
               </a>
             ))}
+            <div className="flex justify-center py-4">
+              <a 
+                href={COMPANY_INFO.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-200"
+              >
+                <Facebook size={32} fill="currentColor" />
+              </a>
+            </div>
             <a 
               href={`tel:${COMPANY_INFO.phone.replace(/\s/g, '')}`}
               className="w-full mt-4 bg-white text-larsens-blue px-4 py-3 rounded-md flex items-center justify-center gap-2 hover:bg-gray-100 font-bold"

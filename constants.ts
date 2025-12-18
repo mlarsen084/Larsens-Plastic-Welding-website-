@@ -8,6 +8,7 @@ export const COMPANY_INFO = {
   address: "124 Joseph Street, Invercargill, New Zealand",
   phone: "022 325 5988",
   email: "goldlarsen@gmail.com",
+  facebook: "https://www.facebook.com/LarsensPlasticWelding/",
   mapLink: "https://www.google.com/maps/search/?api=1&query=124+Joseph+Street+Invercargill+New+Zealand"
 };
 
@@ -41,7 +42,7 @@ export const GALLERY_IMAGES = [
 export const SERVICES: ServiceItem[] = [
   {
     title: "Farm & On-Site Call Outs",
-    description: "We come to you! Mobile welding service available for farm repairs, calf feeders, and stationary water tanks.",
+    description: "We come to you! Mobile welding service available for farm repairs, calf feeders, and stationary water tanks across Southland.",
     icon: Truck
   },
   {

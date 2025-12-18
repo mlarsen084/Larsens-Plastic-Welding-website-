@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         <img
           className="w-full h-full object-cover"
           src="https://raw.githubusercontent.com/mlarsen084/larsens-plastic-welding/refs/heads/main/7.jpg"
-          alt="Workshop welding environment"
+          alt="Larsen's Plastic Welding workshop in Invercargill"
         />
         <div className="absolute inset-0 bg-larsens-blue opacity-85 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -18,17 +18,17 @@ const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto py-20 px-4 sm:py-28 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl mb-6">
-          Expert Plastic Welding <br />
-          <span className="text-blue-300">Invercargill & Southland</span>
+          Larsen's Plastic Welding <br />
+          <span className="text-blue-300">Southland Plastic Repair Experts</span>
         </h1>
         <p className="mt-6 text-xl text-gray-100 max-w-3xl">
-          Anything plastic can be repaired. We fix car bumpers, agricultural tanks, calf feeders, motorbikes, household items, and more. 
-          Bring your broken plastics to us, or we can come to your farm for on-site repairs. <strong className="text-white">Call Gary now on {COMPANY_INFO.phone}.</strong>
+          Don't replace it, repair it. We provide professional <strong>plastic welding in Invercargill</strong> and mobile services throughout Southland. 
+          From car bumpers and water tanks to calf feeders and farm equipment, Gary ensures a durable, cost-effective fix.
         </p>
         
         <div className="mt-8 flex items-center text-blue-200 gap-2">
             <Truck className="w-6 h-6" />
-            <span className="font-semibold text-lg">Mobile Service Available for Farms & Large Items</span>
+            <span className="font-semibold text-lg">Southland Mobile Service for Farms & Heavy Equipment</span>
         </div>
 
         <div className="mt-10 flex flex-wrap gap-4">
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             href="#gallery"
             className="inline-flex items-center px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 transition-colors"
           >
-            View Our Work
+            View Repair Examples
           </a>
         </div>
       </div>
