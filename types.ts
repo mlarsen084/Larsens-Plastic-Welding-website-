@@ -18,5 +18,4 @@ export interface ContactFormState {
   phone: string;
   email: string;
   message: string;
-  image: File | null;
 }

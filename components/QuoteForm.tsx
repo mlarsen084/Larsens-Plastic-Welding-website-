@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import { Send, Upload, Info } from 'lucide-react';
+import { Send, Camera, Info } from 'lucide-react';
 import { COMPANY_INFO } from '../constants';
 
 const QuoteForm: React.FC = () => {
@@ -9,16 +9,9 @@ const QuoteForm: React.FC = () => {
     email: '',
     message: '',
   });
-  const [fileName, setFileName] = useState<string | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name);
-    }
   };
 
   const handleSubmit = (e: FormEvent) => {
@@ -27,15 +20,13 @@ const QuoteForm: React.FC = () => {
     // Construct the mailto link
     const subject = encodeURIComponent(`Quote Request: ${formData.name}`);
     const body = encodeURIComponent(
-      `Hi Larsen's Plastic Welding,\n\nI would like a quote for a repair.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n[Please find the image attached to this email]`
+      `Hi Larsen's Plastic Welding,\n\nI would like a quote for a repair.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n[Note: I will attach photos to this email manually]`
     );
     
     const mailtoLink = `mailto:${COMPANY_INFO.email}?subject=${subject}&body=${body}`;
     
-    // Alert the user about the image
-    if (fileName) {
-      alert(`Because this is a direct email link, your browser will open your default email client now.\n\nIMPORTANT: Please remember to manually attach the photo ("${fileName}") to the email before sending!`);
-    }
+    // Alert the user about the photos
+    alert(`Your email client will now open.\n\nIMPORTANT: Please remember to attach photos of the damage to the email so we can give you an accurate quote!`);
     
     window.location.href = mailtoLink;
   };
@@ -48,7 +39,7 @@ const QuoteForm: React.FC = () => {
             Request a Quote
           </h2>
           <p className="mt-4 text-lg leading-6 text-gray-500">
-            Send us a message with details about your damage. Upload a photo so we can give you an accurate assessment.
+            Send Gary a message with details about your repair. We'll get back to you as soon as possible.
           </p>
         </div>
         <div className="mt-12">
@@ -110,6 +101,7 @@ const QuoteForm: React.FC = () => {
                   name="message"
                   rows={4}
                   required
+                  placeholder="Tell us what needs fixing (e.g. car bumper crack, leaking water tank...)"
                   value={formData.message}
                   onChange={handleChange}
                   className="py-3 px-4 block w-full shadow-sm focus:ring-larsens-blue focus:border-larsens-blue border border-gray-300 rounded-md bg-white"
@@ -117,50 +109,36 @@ const QuoteForm: React.FC = () => {
               </div>
             </div>
 
-            {/* File Upload Section */}
+            {/* Disclaimer Section */}
             <div className="sm:col-span-2">
-              <label className="block text-sm font-medium text-gray-700">
-                Upload Image (JPG/PNG)
-              </label>
-              <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:bg-gray-50 transition-colors bg-white">
-                <div className="space-y-1 text-center">
-                  <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                  <div className="flex text-sm text-gray-600 justify-center">
-                    <label
-                      htmlFor="file-upload"
-                      className="relative cursor-pointer bg-white rounded-md font-medium text-larsens-blue hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-larsens-blue"
-                    >
-                      <span>Upload a file</span>
-                      <input 
-                        id="file-upload" 
-                        name="file-upload" 
-                        type="file" 
-                        className="sr-only" 
-                        accept="image/png, image/jpeg, image/jpg"
-                        onChange={handleFileChange}
-                      />
-                    </label>
-                    <p className="pl-1">or drag and drop</p>
+              <div className="bg-blue-50 border-l-4 border-larsens-blue p-4 rounded-r-md">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <Camera className="h-5 w-5 text-larsens-blue" aria-hidden="true" />
                   </div>
-                  <p className="text-xs text-gray-500">
-                    {fileName ? <span className="text-green-600 font-semibold">{fileName}</span> : "PNG, JPG up to 10MB"}
-                  </p>
+                  <div className="ml-3">
+                    <p className="text-sm text-blue-700 font-medium">
+                      Want a faster quote?
+                    </p>
+                    <p className="text-sm text-blue-600 mt-1">
+                      Please <strong>attach photos</strong> of the damage to your email after clicking the button below. Seeing the crack or break helps Gary provide an accurate price!
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 bg-blue-50 p-2 rounded">
-                 <Info className="w-4 h-4 flex-shrink-0 text-blue-600" />
-                 <p>Clicking submit will open your email client. Please attach the selected photo to the email before sending.</p>
               </div>
             </div>
 
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-larsens-blue hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-larsens-blue transition-colors"
+                className="w-full inline-flex items-center justify-center px-6 py-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-white bg-larsens-blue hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-larsens-blue transition-all transform hover:scale-[1.02]"
               >
-                Send Request
+                Send Quote Request
                 <Send className="ml-2 h-5 w-5" />
               </button>
+              <p className="mt-2 text-center text-xs text-gray-500 flex items-center justify-center gap-1">
+                <Info size={12} /> This will open your default email app
+              </p>
             </div>
           </form>
         </div>
