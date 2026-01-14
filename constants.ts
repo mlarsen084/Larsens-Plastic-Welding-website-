@@ -67,7 +67,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     title: "Industrial & Custom",
-    description: "Industrial components, custom fabrication for motorbike yards, and modifying parts to suit your specific needs.",
+    description: "Industrial components, custom fabrication for motorbike guards, and modifying parts to suit your specific needs.",
     icon: Factory
   }
 ];
